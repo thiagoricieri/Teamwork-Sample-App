@@ -10,6 +10,14 @@
 		2E8B939B3C16F0C0549788B8 /* Pods_TeamworkSampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6034BF3C6E8A6B7E83E03A57 /* Pods_TeamworkSampleUITests.framework */; };
 		6242037AA738E6B820D091D4 /* Pods_TeamworkSampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7FED5CD26DA32383A63F595 /* Pods_TeamworkSampleTests.framework */; };
 		B0342B002040AB8200631CF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0342AFF2040AB8200631CF7 /* Main.storyboard */; };
+		B0342B022040AC4F00631CF7 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0342B012040AC4F00631CF7 /* Router.swift */; };
+		B0342B542040BE8F00631CF7 /* Teamwork.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0342B532040BE8F00631CF7 /* Teamwork.plist */; };
+		B0342B562040BEE600631CF7 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0342B552040BEE600631CF7 /* Types.swift */; };
+		B0342B582040BF1200631CF7 /* RouterConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0342B572040BF1200631CF7 /* RouterConfig.swift */; };
+		B0342B5B2040C38300631CF7 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0342B5A2040C38300631CF7 /* Project.swift */; };
+		B0342B5D2040C39400631CF7 /* ApiObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0342B5C2040C39400631CF7 /* ApiObject.swift */; };
+		B0342B602040C58D00631CF7 /* StoryboardContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0342B5F2040C58D00631CF7 /* StoryboardContext.swift */; };
+		B0342B622040C5AD00631CF7 /* MainStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0342B612040C5AD00631CF7 /* MainStoryboard.swift */; };
 		B03F2BEF2040A96D0067CC1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03F2BEE2040A96D0067CC1E /* AppDelegate.swift */; };
 		B03F2BF12040A96D0067CC1E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03F2BF02040A96D0067CC1E /* ViewController.swift */; };
 		B03F2BF62040A96D0067CC1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B03F2BF52040A96D0067CC1E /* Assets.xcassets */; };
@@ -45,6 +53,14 @@
 		6034BF3C6E8A6B7E83E03A57 /* Pods_TeamworkSampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeamworkSampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7FED5CD26DA32383A63F595 /* Pods_TeamworkSampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeamworkSampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0342AFF2040AB8200631CF7 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B0342B012040AC4F00631CF7 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		B0342B532040BE8F00631CF7 /* Teamwork.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Teamwork.plist; sourceTree = "<group>"; };
+		B0342B552040BEE600631CF7 /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
+		B0342B572040BF1200631CF7 /* RouterConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterConfig.swift; sourceTree = "<group>"; };
+		B0342B5A2040C38300631CF7 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		B0342B5C2040C39400631CF7 /* ApiObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiObject.swift; sourceTree = "<group>"; };
+		B0342B5F2040C58D00631CF7 /* StoryboardContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardContext.swift; sourceTree = "<group>"; };
+		B0342B612040C5AD00631CF7 /* MainStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStoryboard.swift; sourceTree = "<group>"; };
 		B03F2BEB2040A96D0067CC1E /* TeamworkSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeamworkSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B03F2BEE2040A96D0067CC1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B03F2BF02040A96D0067CC1E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +131,7 @@
 		B0342AFC2040AB6200631CF7 /* core */ = {
 			isa = PBXGroup;
 			children = (
+				B0342B552040BEE600631CF7 /* Types.swift */,
 			);
 			path = core;
 			sourceTree = "<group>";
@@ -130,10 +147,31 @@
 		B0342AFE2040AB6B00631CF7 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				B0342B5E2040C58100631CF7 /* storyboards */,
 				B03F2BF72040A96D0067CC1E /* LaunchScreen.storyboard */,
 				B0342AFF2040AB8200631CF7 /* Main.storyboard */,
 			);
 			path = views;
+			sourceTree = "<group>";
+		};
+		B0342B592040BF5200631CF7 /* api */ = {
+			isa = PBXGroup;
+			children = (
+				B0342B572040BF1200631CF7 /* RouterConfig.swift */,
+				B0342B012040AC4F00631CF7 /* Router.swift */,
+				B0342B5C2040C39400631CF7 /* ApiObject.swift */,
+				B0342B5A2040C38300631CF7 /* Project.swift */,
+			);
+			path = api;
+			sourceTree = "<group>";
+		};
+		B0342B5E2040C58100631CF7 /* storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				B0342B5F2040C58D00631CF7 /* StoryboardContext.swift */,
+				B0342B612040C5AD00631CF7 /* MainStoryboard.swift */,
+			);
+			path = storyboards;
 			sourceTree = "<group>";
 		};
 		B03F2BE22040A96D0067CC1E = {
@@ -163,7 +201,9 @@
 			children = (
 				B03F2BEE2040A96D0067CC1E /* AppDelegate.swift */,
 				B03F2BFA2040A96D0067CC1E /* Info.plist */,
+				B0342B532040BE8F00631CF7 /* Teamwork.plist */,
 				B03F2BF52040A96D0067CC1E /* Assets.xcassets */,
+				B0342B592040BF5200631CF7 /* api */,
 				B0342AFC2040AB6200631CF7 /* core */,
 				B0342AFE2040AB6B00631CF7 /* views */,
 				B0342AFD2040AB6700631CF7 /* controllers */,
@@ -307,6 +347,7 @@
 			files = (
 				B03F2BF92040A96D0067CC1E /* LaunchScreen.storyboard in Resources */,
 				B03F2BF62040A96D0067CC1E /* Assets.xcassets in Resources */,
+				B0342B542040BE8F00631CF7 /* Teamwork.plist in Resources */,
 				B0342B002040AB8200631CF7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -482,8 +523,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0342B602040C58D00631CF7 /* StoryboardContext.swift in Sources */,
 				B03F2BF12040A96D0067CC1E /* ViewController.swift in Sources */,
+				B0342B022040AC4F00631CF7 /* Router.swift in Sources */,
 				B03F2BEF2040A96D0067CC1E /* AppDelegate.swift in Sources */,
+				B0342B5D2040C39400631CF7 /* ApiObject.swift in Sources */,
+				B0342B562040BEE600631CF7 /* Types.swift in Sources */,
+				B0342B622040C5AD00631CF7 /* MainStoryboard.swift in Sources */,
+				B0342B582040BF1200631CF7 /* RouterConfig.swift in Sources */,
+				B0342B5B2040C38300631CF7 /* Project.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
