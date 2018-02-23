@@ -28,6 +28,8 @@
 		B0342B752040CA2400631CF7 /* BaseApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0342B742040CA2400631CF7 /* BaseApi.swift */; };
 		B0342B772040D4CA00631CF7 /* ProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0342B762040D4CA00631CF7 /* ProjectCell.swift */; };
 		B0342B792040D69E00631CF7 /* OneProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0342B782040D69E00631CF7 /* OneProjectViewModel.swift */; };
+		B0342B7B2040DB1200631CF7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0342B7A2040DB1200631CF7 /* Extensions.swift */; };
+		B0342B7D2040DB3200631CF7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B0342B7C2040DB3200631CF7 /* Localizable.strings */; };
 		B03F2BEF2040A96D0067CC1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03F2BEE2040A96D0067CC1E /* AppDelegate.swift */; };
 		B03F2BF62040A96D0067CC1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B03F2BF52040A96D0067CC1E /* Assets.xcassets */; };
 		B03F2BF92040A96D0067CC1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B03F2BF72040A96D0067CC1E /* LaunchScreen.storyboard */; };
@@ -80,6 +82,8 @@
 		B0342B742040CA2400631CF7 /* BaseApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseApi.swift; sourceTree = "<group>"; };
 		B0342B762040D4CA00631CF7 /* ProjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCell.swift; sourceTree = "<group>"; };
 		B0342B782040D69E00631CF7 /* OneProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneProjectViewModel.swift; sourceTree = "<group>"; };
+		B0342B7A2040DB1200631CF7 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		B0342B7C2040DB3200631CF7 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		B03F2BEB2040A96D0067CC1E /* TeamworkSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeamworkSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B03F2BEE2040A96D0067CC1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B03F2BF52040A96D0067CC1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -150,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				B0342B552040BEE600631CF7 /* Types.swift */,
+				B0342B7A2040DB1200631CF7 /* Extensions.swift */,
 			);
 			path = core;
 			sourceTree = "<group>";
@@ -198,9 +203,9 @@
 			isa = PBXGroup;
 			children = (
 				B0342B6D2040C79F00631CF7 /* ProjectsViewModel.swift */,
+				B0342B782040D69E00631CF7 /* OneProjectViewModel.swift */,
 				B0342B642040C69600631CF7 /* ProjectsViewController.swift */,
 				B0342B762040D4CA00631CF7 /* ProjectCell.swift */,
-				B0342B782040D69E00631CF7 /* OneProjectViewModel.swift */,
 			);
 			path = projects;
 			sourceTree = "<group>";
@@ -253,6 +258,7 @@
 				B03F2BEE2040A96D0067CC1E /* AppDelegate.swift */,
 				B03F2BFA2040A96D0067CC1E /* Info.plist */,
 				B0342B532040BE8F00631CF7 /* Teamwork.plist */,
+				B0342B7C2040DB3200631CF7 /* Localizable.strings */,
 				B03F2BF52040A96D0067CC1E /* Assets.xcassets */,
 				B0342B592040BF5200631CF7 /* api */,
 				B0342AFC2040AB6200631CF7 /* core */,
@@ -396,6 +402,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0342B7D2040DB3200631CF7 /* Localizable.strings in Resources */,
 				B03F2BF92040A96D0067CC1E /* LaunchScreen.storyboard in Resources */,
 				B03F2BF62040A96D0067CC1E /* Assets.xcassets in Resources */,
 				B0342B542040BE8F00631CF7 /* Teamwork.plist in Resources */,
@@ -461,10 +468,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TeamworkSample/Pods-TeamworkSample-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -581,6 +592,7 @@
 				B0342B022040AC4F00631CF7 /* Router.swift in Sources */,
 				B03F2BEF2040A96D0067CC1E /* AppDelegate.swift in Sources */,
 				B0342B6C2040C73E00631CF7 /* BaseTableViewCell.swift in Sources */,
+				B0342B7B2040DB1200631CF7 /* Extensions.swift in Sources */,
 				B0342B5D2040C39400631CF7 /* ApiObject.swift in Sources */,
 				B0342B562040BEE600631CF7 /* Types.swift in Sources */,
 				B0342B652040C69600631CF7 /* ProjectsViewController.swift in Sources */,

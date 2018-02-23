@@ -11,6 +11,7 @@ import Foundation
 class OneProjectViewModel: BaseViewModel {
     
     fileprivate var model: Project!
+    fileprivate let dateFormat = DateFormatter()
     
     var id: String {
         get { return model.id }
@@ -24,8 +25,18 @@ class OneProjectViewModel: BaseViewModel {
     var projectDescription: String {
         get { return model.projectDescription }
     }
+    var startToEndDate: String {
+        get {
+            if  let startDate = model.startDate,
+                let endDate = model.endDate {
+                return "\(dateFormat.string(from: startDate)) → \(dateFormat.string(from: endDate))"
+            }
+            return "Project.Date.NotSet".localized
+        }
+    }
     
     init(data: Dict) {
+        self.dateFormat.dateFormat = "dd/MM/yyyy"
         self.model = Project(data: data)
     }
 }

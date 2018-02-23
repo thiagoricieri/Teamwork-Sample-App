@@ -2,6 +2,8 @@ use_frameworks!
 
 def shared_pods
     pod 'Alamofire'
+    pod 'MBProgressHUD'
+    pod 'SDWebImage', '~> 3.7.3'
 end
 
 target 'TeamworkSample' do

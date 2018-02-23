@@ -11,14 +11,16 @@ import UIKit
 
 class ProjectCell: BaseTableViewCell {
     
-    static let height = CGFloat(100)
+    static let height = CGFloat(150)
     static let identifier = "ProjectCell"
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var startToEndDate: UILabel!
     
     func configure(with project: OneProjectViewModel) {
         nameLabel.text = project.name
         descriptionLabel.text = project.projectDescription
+        startToEndDate.text = project.startToEndDate
     }
 }

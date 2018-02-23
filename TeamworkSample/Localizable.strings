@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  TeamworkSample
+
+  Created by Thiago Ricieri on 23/02/2018.
+  Copyright © 2018 Thiago Ricieri. All rights reserved.
+*/
+
+"Projects.Title" = "Projects";
+"Projects.WillLoad" = "Loading projects...";
+"Projects.Error.Loading" = "Error loading projects. Please check your API Key";
+"Project.Date.NotSet" = "Date not set.";

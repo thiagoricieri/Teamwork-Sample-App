@@ -15,8 +15,22 @@ class ProjectsViewController: BaseTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Projects.Title".localized
+        
+        viewModel.defaultWillLoad = {
+            self.hudShow(message: "Projects.WillLoad".localized)
+        }
+        viewModel.defaultNetworkError = {
+            self.errorAlert(message: "Projects.Error.Loading".localized)
+        }
+        viewModel.defaultResultError = viewModel.defaultNetworkError
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         viewModel.allProjects {
+            self.hudDismiss()
             self.table.reloadData()
         }
     }
@@ -24,7 +38,6 @@ class ProjectsViewController: BaseTableViewController {
     // MARK: -
     func tableView(_ tableView: UITableView,
                    heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
         return ProjectCell.height
     }
     

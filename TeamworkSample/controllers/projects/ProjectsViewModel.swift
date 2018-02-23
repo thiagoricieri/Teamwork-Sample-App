@@ -14,6 +14,7 @@ class ProjectsViewModel: BaseViewModel {
     @IBOutlet var api: ProjectsApi!
     
     var projects = [OneProjectViewModel]()
+    var defaultWillLoad: Callback?
     var defaultNetworkError: Callback?
     var defaultResultError: Callback?
     
@@ -26,6 +27,7 @@ class ProjectsViewModel: BaseViewModel {
     }
     
     func allProjects(completion: @escaping Callback) {
+        defaultWillLoad?()
         api.myProjects(error: defaultNetworkError) {
             [weak self] success, unsafeResult in
             guard let me = self else { return }
