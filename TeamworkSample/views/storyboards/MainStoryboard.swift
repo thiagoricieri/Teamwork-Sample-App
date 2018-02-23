@@ -12,14 +12,14 @@ import UIKit
 class MainStoryboard: StoryboardContext {
     
     struct Segue {
-        static let toCreate = "toCreate"
+        static let toProjects = "toProjects"
     }
     
     override init() {
         super.init(name: "Main")
     }
     
-    func createListViewController() -> UIViewController {
-        return controller(name: "CreateList")
+    func projectsViewController() -> ProjectsViewController {
+        return controller(name: "ProjectsViewController") as! ProjectsViewController
     }
 }

@@ -10,3 +10,5 @@ import Alamofire
 
 typealias Dict = [String: AnyObject]
 typealias InBackgroundResponse = (DataResponse<Any>) -> Void
+typealias OnProcessFinished = (Bool, AnyObject?) -> Void
+typealias Callback = () -> Void

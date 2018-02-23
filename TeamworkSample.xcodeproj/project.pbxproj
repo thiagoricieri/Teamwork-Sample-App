@@ -18,8 +18,17 @@
 		B0342B5D2040C39400631CF7 /* ApiObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0342B5C2040C39400631CF7 /* ApiObject.swift */; };
 		B0342B602040C58D00631CF7 /* StoryboardContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0342B5F2040C58D00631CF7 /* StoryboardContext.swift */; };
 		B0342B622040C5AD00631CF7 /* MainStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0342B612040C5AD00631CF7 /* MainStoryboard.swift */; };
+		B0342B652040C69600631CF7 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0342B642040C69600631CF7 /* ProjectsViewController.swift */; };
+		B0342B682040C6A600631CF7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0342B672040C6A600631CF7 /* BaseViewController.swift */; };
+		B0342B6A2040C6DC00631CF7 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0342B692040C6DC00631CF7 /* BaseTableViewController.swift */; };
+		B0342B6C2040C73E00631CF7 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0342B6B2040C73E00631CF7 /* BaseTableViewCell.swift */; };
+		B0342B6E2040C79F00631CF7 /* ProjectsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0342B6D2040C79F00631CF7 /* ProjectsViewModel.swift */; };
+		B0342B702040C82900631CF7 /* ProjectsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0342B6F2040C82900631CF7 /* ProjectsApi.swift */; };
+		B0342B722040C9D800631CF7 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0342B712040C9D800631CF7 /* BaseViewModel.swift */; };
+		B0342B752040CA2400631CF7 /* BaseApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0342B742040CA2400631CF7 /* BaseApi.swift */; };
+		B0342B772040D4CA00631CF7 /* ProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0342B762040D4CA00631CF7 /* ProjectCell.swift */; };
+		B0342B792040D69E00631CF7 /* OneProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0342B782040D69E00631CF7 /* OneProjectViewModel.swift */; };
 		B03F2BEF2040A96D0067CC1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03F2BEE2040A96D0067CC1E /* AppDelegate.swift */; };
-		B03F2BF12040A96D0067CC1E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03F2BF02040A96D0067CC1E /* ViewController.swift */; };
 		B03F2BF62040A96D0067CC1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B03F2BF52040A96D0067CC1E /* Assets.xcassets */; };
 		B03F2BF92040A96D0067CC1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B03F2BF72040A96D0067CC1E /* LaunchScreen.storyboard */; };
 		B03F2C042040A96D0067CC1E /* TeamworkSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03F2C032040A96D0067CC1E /* TeamworkSampleTests.swift */; };
@@ -61,9 +70,18 @@
 		B0342B5C2040C39400631CF7 /* ApiObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiObject.swift; sourceTree = "<group>"; };
 		B0342B5F2040C58D00631CF7 /* StoryboardContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardContext.swift; sourceTree = "<group>"; };
 		B0342B612040C5AD00631CF7 /* MainStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStoryboard.swift; sourceTree = "<group>"; };
+		B0342B642040C69600631CF7 /* ProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
+		B0342B672040C6A600631CF7 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		B0342B692040C6DC00631CF7 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		B0342B6B2040C73E00631CF7 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		B0342B6D2040C79F00631CF7 /* ProjectsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewModel.swift; sourceTree = "<group>"; };
+		B0342B6F2040C82900631CF7 /* ProjectsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsApi.swift; sourceTree = "<group>"; };
+		B0342B712040C9D800631CF7 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		B0342B742040CA2400631CF7 /* BaseApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseApi.swift; sourceTree = "<group>"; };
+		B0342B762040D4CA00631CF7 /* ProjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCell.swift; sourceTree = "<group>"; };
+		B0342B782040D69E00631CF7 /* OneProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneProjectViewModel.swift; sourceTree = "<group>"; };
 		B03F2BEB2040A96D0067CC1E /* TeamworkSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeamworkSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B03F2BEE2040A96D0067CC1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B03F2BF02040A96D0067CC1E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B03F2BF52040A96D0067CC1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B03F2BF82040A96D0067CC1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B03F2BFA2040A96D0067CC1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -139,7 +157,8 @@
 		B0342AFD2040AB6700631CF7 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B03F2BF02040A96D0067CC1E /* ViewController.swift */,
+				B0342B662040C69B00631CF7 /* common */,
+				B0342B632040C68700631CF7 /* projects */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -159,8 +178,9 @@
 			children = (
 				B0342B572040BF1200631CF7 /* RouterConfig.swift */,
 				B0342B012040AC4F00631CF7 /* Router.swift */,
+				B0342B742040CA2400631CF7 /* BaseApi.swift */,
 				B0342B5C2040C39400631CF7 /* ApiObject.swift */,
-				B0342B5A2040C38300631CF7 /* Project.swift */,
+				B0342B732040C9F400631CF7 /* projects */,
 			);
 			path = api;
 			sourceTree = "<group>";
@@ -172,6 +192,37 @@
 				B0342B612040C5AD00631CF7 /* MainStoryboard.swift */,
 			);
 			path = storyboards;
+			sourceTree = "<group>";
+		};
+		B0342B632040C68700631CF7 /* projects */ = {
+			isa = PBXGroup;
+			children = (
+				B0342B6D2040C79F00631CF7 /* ProjectsViewModel.swift */,
+				B0342B642040C69600631CF7 /* ProjectsViewController.swift */,
+				B0342B762040D4CA00631CF7 /* ProjectCell.swift */,
+				B0342B782040D69E00631CF7 /* OneProjectViewModel.swift */,
+			);
+			path = projects;
+			sourceTree = "<group>";
+		};
+		B0342B662040C69B00631CF7 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				B0342B712040C9D800631CF7 /* BaseViewModel.swift */,
+				B0342B672040C6A600631CF7 /* BaseViewController.swift */,
+				B0342B692040C6DC00631CF7 /* BaseTableViewController.swift */,
+				B0342B6B2040C73E00631CF7 /* BaseTableViewCell.swift */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		B0342B732040C9F400631CF7 /* projects */ = {
+			isa = PBXGroup;
+			children = (
+				B0342B5A2040C38300631CF7 /* Project.swift */,
+				B0342B6F2040C82900631CF7 /* ProjectsApi.swift */,
+			);
+			path = projects;
 			sourceTree = "<group>";
 		};
 		B03F2BE22040A96D0067CC1E = {
@@ -523,14 +574,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0342B702040C82900631CF7 /* ProjectsApi.swift in Sources */,
 				B0342B602040C58D00631CF7 /* StoryboardContext.swift in Sources */,
-				B03F2BF12040A96D0067CC1E /* ViewController.swift in Sources */,
+				B0342B682040C6A600631CF7 /* BaseViewController.swift in Sources */,
+				B0342B792040D69E00631CF7 /* OneProjectViewModel.swift in Sources */,
 				B0342B022040AC4F00631CF7 /* Router.swift in Sources */,
 				B03F2BEF2040A96D0067CC1E /* AppDelegate.swift in Sources */,
+				B0342B6C2040C73E00631CF7 /* BaseTableViewCell.swift in Sources */,
 				B0342B5D2040C39400631CF7 /* ApiObject.swift in Sources */,
 				B0342B562040BEE600631CF7 /* Types.swift in Sources */,
+				B0342B652040C69600631CF7 /* ProjectsViewController.swift in Sources */,
 				B0342B622040C5AD00631CF7 /* MainStoryboard.swift in Sources */,
 				B0342B582040BF1200631CF7 /* RouterConfig.swift in Sources */,
+				B0342B772040D4CA00631CF7 /* ProjectCell.swift in Sources */,
+				B0342B722040C9D800631CF7 /* BaseViewModel.swift in Sources */,
+				B0342B6E2040C79F00631CF7 /* ProjectsViewModel.swift in Sources */,
+				B0342B752040CA2400631CF7 /* BaseApi.swift in Sources */,
+				B0342B6A2040C6DC00631CF7 /* BaseTableViewController.swift in Sources */,
 				B0342B5B2040C38300631CF7 /* Project.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

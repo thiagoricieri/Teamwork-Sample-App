@@ -41,6 +41,14 @@ enum Router: URLRequestConvertible {
     }
 }
 
+func receivedValidResult(_ result: DataResponse<Any>) -> Bool {
+    guard result.response != nil else { return false }
+    guard
+        let code = result.response?.statusCode,
+        code >= 200, code < 300 else { return false }
+    
+    return true
+}
 
 func fetch(_ request: URLRequestConvertible,
            complete: @escaping InBackgroundResponse) {

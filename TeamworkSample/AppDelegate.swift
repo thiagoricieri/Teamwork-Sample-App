@@ -20,10 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         window?.rootViewController = MainStoryboard().firstController()
         
-        Project.all { response in
-            print(response)
-        }
-        
         return true
     }
 }
