@@ -49,7 +49,7 @@
 		B03F2BEF2040A96D0067CC1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03F2BEE2040A96D0067CC1E /* AppDelegate.swift */; };
 		B03F2BF62040A96D0067CC1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B03F2BF52040A96D0067CC1E /* Assets.xcassets */; };
 		B03F2BF92040A96D0067CC1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B03F2BF72040A96D0067CC1E /* LaunchScreen.storyboard */; };
-		B03F2C042040A96D0067CC1E /* TeamworkSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03F2C032040A96D0067CC1E /* TeamworkSampleTests.swift */; };
+		B03F2C042040A96D0067CC1E /* TeamworkTestTaskLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03F2C032040A96D0067CC1E /* TeamworkTestTaskLists.swift */; };
 		B03F2C0F2040A96D0067CC1E /* TeamworkSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03F2C0E2040A96D0067CC1E /* TeamworkSampleUITests.swift */; };
 		B09066972041E56200574216 /* CompanyOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09066962041E56200574216 /* CompanyOverviewView.swift */; };
 		B09066992041E5C600574216 /* CompanyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09066982041E5C600574216 /* CompanyViewModel.swift */; };
@@ -57,6 +57,8 @@
 		B090669E2041E63A00574216 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = B090669D2041E63A00574216 /* Account.swift */; };
 		B09066A02041E6BF00574216 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B090669F2041E6BF00574216 /* AccountViewModel.swift */; };
 		B09066A42041EDE700574216 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09066A32041EDE700574216 /* Tag.swift */; };
+		B0BC87C7204208C100D0B7A8 /* TeamworkTestProjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BC87C6204208C100D0B7A8 /* TeamworkTestProjects.swift */; };
+		B0BC87C92042097B00D0B7A8 /* AccountApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BC87C82042097B00D0B7A8 /* AccountApiTests.swift */; };
 		C8F19D24DF7540B42437411F /* Pods_TeamworkSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5B8EF9BBD94EF0A37CBE4F5 /* Pods_TeamworkSample.framework */; };
 /* End PBXBuildFile section */
 
@@ -128,7 +130,7 @@
 		B03F2BF82040A96D0067CC1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B03F2BFA2040A96D0067CC1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B03F2BFF2040A96D0067CC1E /* TeamworkSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TeamworkSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B03F2C032040A96D0067CC1E /* TeamworkSampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamworkSampleTests.swift; sourceTree = "<group>"; };
+		B03F2C032040A96D0067CC1E /* TeamworkTestTaskLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamworkTestTaskLists.swift; sourceTree = "<group>"; };
 		B03F2C052040A96D0067CC1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B03F2C0A2040A96D0067CC1E /* TeamworkSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TeamworkSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B03F2C0E2040A96D0067CC1E /* TeamworkSampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamworkSampleUITests.swift; sourceTree = "<group>"; };
@@ -139,6 +141,8 @@
 		B090669D2041E63A00574216 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		B090669F2041E6BF00574216 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		B09066A32041EDE700574216 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
+		B0BC87C6204208C100D0B7A8 /* TeamworkTestProjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamworkTestProjects.swift; sourceTree = "<group>"; };
+		B0BC87C82042097B00D0B7A8 /* AccountApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountApiTests.swift; sourceTree = "<group>"; };
 		BA11B4BE699C9A405EB6C7D3 /* Pods-TeamworkSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamworkSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TeamworkSample/Pods-TeamworkSample.debug.xcconfig"; sourceTree = "<group>"; };
 		E5B8EF9BBD94EF0A37CBE4F5 /* Pods_TeamworkSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeamworkSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -358,7 +362,9 @@
 		B03F2C022040A96D0067CC1E /* TeamworkSampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				B03F2C032040A96D0067CC1E /* TeamworkSampleTests.swift */,
+				B0BC87C82042097B00D0B7A8 /* AccountApiTests.swift */,
+				B0BC87C6204208C100D0B7A8 /* TeamworkTestProjects.swift */,
+				B03F2C032040A96D0067CC1E /* TeamworkTestTaskLists.swift */,
 				B03F2C052040A96D0067CC1E /* Info.plist */,
 			);
 			path = TeamworkSampleTests;
@@ -749,7 +755,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B03F2C042040A96D0067CC1E /* TeamworkSampleTests.swift in Sources */,
+				B0BC87C92042097B00D0B7A8 /* AccountApiTests.swift in Sources */,
+				B03F2C042040A96D0067CC1E /* TeamworkTestTaskLists.swift in Sources */,
+				B0BC87C7204208C100D0B7A8 /* TeamworkTestProjects.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
