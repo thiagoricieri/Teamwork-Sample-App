@@ -12,6 +12,7 @@ import UIKit
 class MainStoryboard: StoryboardContext {
     
     struct Segue {
+        static let toTaskLists = "toTaskLists"
         static let toTasks = "toTasks"
     }
     
@@ -21,6 +22,10 @@ class MainStoryboard: StoryboardContext {
     
     func projectsViewController() -> ProjectsViewController {
         return controller(name: "ProjectsViewController") as! ProjectsViewController
+    }
+    
+    func taskListsViewController() -> TaskListsViewController {
+        return controller(name: "TaskListsViewController") as! TaskListsViewController
     }
     
     func tasksViewController() -> TasksViewController {

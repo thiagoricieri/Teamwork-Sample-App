@@ -17,25 +17,36 @@ class ProjectsViewController: BaseTableViewController {
         super.viewDidLoad()
         self.title = "Projects.Title".localized
         
-        viewModel.defaultWillLoad = {
-            self.hudShow(message: "Projects.WillLoad".localized)
-        }
-        viewModel.defaultNetworkError = {
-            self.errorAlert(message: "Projects.Error.Loading".localized)
+        viewModel.defaultNetworkError = { [weak self] in
+            self?.errorAlert(message: "Projects.Error.Loading".localized)
         }
         viewModel.defaultResultError = viewModel.defaultNetworkError
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.enableRefreshControl()
         
-        viewModel.allProjects {
-            self.hudDismiss()
-            self.table.reloadData()
+        viewModel.defaultWillLoad = { [weak self] in
+            self?.hudShow(message: "Projects.WillLoad".localized)
+        }
+        viewModel.allProjects { [weak self] in
+            self?.hudDismiss()
+            self?.table.reloadData()
         }
     }
     
-    // MARK: -
+    // MARK: - Refresh Control
+    override func refreshData() {
+        
+        viewModel.defaultWillLoad = nil
+        viewModel.allProjects { [weak self] in
+            self?.table.reloadData()
+            self?.endRefreshAnimation()
+        }
+    }
+    
+    // MARK: - Table View
     func tableView(_ tableView: UITableView,
                    heightForRowAt indexPath: IndexPath) -> CGFloat {
         return ProjectCell.height
@@ -55,7 +66,7 @@ class ProjectsViewController: BaseTableViewController {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let item = viewModel.one(at: indexPath.row)
-        performSegue(withIdentifier: MainStoryboard.Segue.toTasks, sender: item)
+        performSegue(withIdentifier: MainStoryboard.Segue.toTaskLists, sender: item)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -64,10 +75,9 @@ class ProjectsViewController: BaseTableViewController {
     
     // MARK: - Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == MainStoryboard.Segue.toTasks {
-            let dest = segue.destination as! TasksViewController
-            let project = sender as! OneProjectViewModel
-            dest.projectId = project.id
+        if segue.identifier == MainStoryboard.Segue.toTaskLists {
+            let dest = segue.destination as! TaskListsViewController
+            dest.project = sender as! OneProjectViewModel
         }
     }
 }

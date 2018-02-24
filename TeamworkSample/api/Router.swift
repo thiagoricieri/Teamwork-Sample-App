@@ -16,7 +16,8 @@ enum Router: URLRequestConvertible {
     
     // MARK: - API Endpoints
     case projects()
-    case tasks(projectId: String)
+    case lists(projectId: String)
+    case tasks(listId: String)
     
     func asURLRequest() throws -> URLRequest {
         
@@ -24,8 +25,10 @@ enum Router: URLRequestConvertible {
             switch self {
                 case .projects():
                     return ("/projects.json", "GET", nil)
-                case .tasks(let projectId):
-                    return ("/projects/\(projectId)/tasks.json", "GET", nil)
+                case .lists(let projectId):
+                    return ("/projects/\(projectId)/tasklists.json", "GET", nil)
+                case .tasks(let listId):
+                    return ("/tasklists/\(listId)/tasks.json", "GET", nil)
             }
         }
         

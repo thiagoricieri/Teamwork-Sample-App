@@ -12,31 +12,21 @@ import Alamofire
 
 class TasksViewModel: BaseViewModel {
     
-    typealias TodoAndTask = (todo: TodoList, tasks: [OneTaskViewModel])
-    
     @IBOutlet var api: TasksApi!
     
-    var tasksCollection = [TodoAndTask]()
+    var tasks = [OneTaskViewModel]()
     
-    var sectionsCount: Int {
-        get { return tasksCollection.count }
+    var tasksCount: Int {
+        get { return tasks.count }
     }
     
-    func section(at: Int) -> TodoList {
-        return tasksCollection[at].todo
-    }
-    
-    func countTasks(section: Int) -> Int {
-        return tasksCollection[section].tasks.count
-    }
-    
-    func one(at: Int, section: Int) -> OneTaskViewModel {
-        return tasksCollection[section].tasks[at]
+    func one(at: Int) -> OneTaskViewModel {
+        return tasks[at]
     }
     
     func tasks(of project: String, completion: @escaping Callback) {
         defaultWillLoad?()
-        api.tasks(ofProject: project, error: defaultNetworkError) {
+        api.tasks(of: project, error: defaultNetworkError) {
             [weak self] success, unsafeResult in
             guard let me = self else { return }
             guard success, let result = unsafeResult else {
@@ -58,15 +48,10 @@ class TasksViewModel: BaseViewModel {
                 return
         }
         
-        tasksCollection.removeAll()
+        tasks.removeAll()
         apiArr.forEach { taskData in
             let task = OneTaskViewModel(data: taskData)
-            guard let index = self.tasksCollection.index(where: { $0.todo.name == task.todoListName }) else {
-                let section = TodoAndTask(todo: TodoList(name: task.todoListName), tasks: [task])
-                self.tasksCollection.append(section)
-                return
-            }
-            self.tasksCollection[index].tasks.append(task)
+            tasks.append(task)
         }
     }
 }

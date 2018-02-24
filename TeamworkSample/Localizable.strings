@@ -12,8 +12,13 @@
 "Projects.Error.Loading" = "Error loading projects. Please check your API Key";
 "Project.Date.NotSet" = "Date not set.";
 
+// Tasks Lists
+"TaskLists.Title" = "Tasks Lists";
+"TaskLists.WillLoad" = "Loading Lists...";
+"TaskLists.Error.Loading" = "There was an error loading the lists of this project.";
+
 // Tasks
 "Tasks.Title" = "Tasks";
 "Tasks.WillLoad" = "Loading tasks...";
-"Tasks.Error.Loading" = "There was an error loading the tasks of this project.";
+"Tasks.Error.Loading" = "There was an error loading the tasks of this list.";
 "Tasks.Responsible.Anyone" = "Anyone is responsible";
