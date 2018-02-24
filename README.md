@@ -3,8 +3,9 @@ A sample app for listing projects and managing tasks using Teamwork API.
 
 ## Table of contents
 1. [Overall features](#overall-features)
-2. [Application Architecture Design](#application-architecture-design)
-3. [Screenshots](#screenshots)
+2. [Pull requests](#pull-requests)
+3. [Application Architecture Design](#application-architecture-design)
+4. [Screenshots](#screenshots)
    * [iPhone X](#iphone-x)
    * [iPhone Landscape](#iphone-landscape)
    * [iPad](#ipad)
@@ -17,6 +18,13 @@ A sample app for listing projects and managing tasks using Teamwork API.
 - List tasks from the selected task-list;
 - iPad / iPhone Plus support with SplitView;
 - Custom look and feel;
+
+## Pull Requests
+Please refer to the merged pull requests to get a grasp of how the project evolved in 12 hours of work:
+- [Basic app structure](https://github.com/thiagoricieri/Teamwork-Sample-App/pull/1)
+- [iPad compatibility](https://github.com/thiagoricieri/Teamwork-Sample-App/pull/2)
+- [Better look-and-feel](https://github.com/thiagoricieri/Teamwork-Sample-App/pull/3)
+- [Unit Testing]()
 
 ## Application Architecture Design
 TBD
