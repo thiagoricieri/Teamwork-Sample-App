@@ -23,7 +23,7 @@ class AccountApiTests: XCTestCase {
         super.tearDown()
     }
     
-    func testReceiveData() {
+    func testApiResponse_GetAccount() {
         let hasAccountKey = expectation(description: "Returns an object with 'account' key")
         let hasRequiredProperties = expectation(description: "Account object has required properties")
         

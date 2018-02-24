@@ -26,7 +26,7 @@ class TaskApiTests: XCTestCase {
     func testApiResponse_GetTaskLists() {
         let expectedKey = "tasklists"
         let hasAccountKey = expectation(description: "Returns an object with '\(expectedKey)' key")
-        let hasRequiredProperties = expectation(description: "Account object has required properties")
+        let hasRequiredProperties = expectation(description: "Task List object has required properties")
         let validProjectId = "339988"
         
         api.lists(
@@ -40,11 +40,11 @@ class TaskApiTests: XCTestCase {
                     return
                 }
                 guard let dict = result as? Dict else {
-                    XCTFail("Account API returned an invalid object")
+                    XCTFail("Tasks API returned an invalid object")
                     return
                 }
                 guard let lists = dict[expectedKey] as? [Dict] else  {
-                    XCTFail("Account API does not have a '\(expectedKey)' key.")
+                    XCTFail("Tasks API does not have a '\(expectedKey)' key.")
                     return
                 }
                 hasAccountKey.fulfill()
@@ -68,7 +68,7 @@ class TaskApiTests: XCTestCase {
     func testApiResponse_GetTasks() {
         let expectedKey = "todo-items"
         let hasAccountKey = expectation(description: "Returns an object with '\(expectedKey)' key")
-        let hasRequiredProperties = expectation(description: "Account object has required properties")
+        let hasRequiredProperties = expectation(description: "Task List object has required properties")
         let validTaskListId = "1499279"
         
         api.tasks(
@@ -82,11 +82,11 @@ class TaskApiTests: XCTestCase {
                     return
                 }
                 guard let dict = result as? Dict else {
-                    XCTFail("Account API returned an invalid object")
+                    XCTFail("Tasks API returned an invalid object")
                     return
                 }
                 guard let tasks = dict[expectedKey] as? [Dict] else  {
-                    XCTFail("Account API does not have a '\(expectedKey)' key.")
+                    XCTFail("Tasks API does not have a '\(expectedKey)' key.")
                     return
                 }
                 hasAccountKey.fulfill()
