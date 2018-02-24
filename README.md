@@ -1,6 +1,14 @@
 # Teamwork Sample App
 A sample app for listing projects and managing tasks using Teamwork API.
 
+## Table of contents
+1. [Overall features](#overall-features)
+2. [Application Architecture Design](#application-architecture-design)
+3. [Screenshots](#screenshots)
+  * [iPhone X](#iphone-x)
+  * [iPhone Landscape](#iphone-landscape)
+  * [iPad](#ipad)
+
 ## Overall features
 - Set user credentials to `Teamwork.plist`;
 - Fetch account details;
