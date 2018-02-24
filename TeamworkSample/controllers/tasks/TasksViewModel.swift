@@ -14,7 +14,7 @@ class TasksViewModel: BaseViewModel {
     
     @IBOutlet var api: TasksApi!
     
-    var tasks = [OneTaskViewModel]()
+    fileprivate var tasks = [OneTaskViewModel]()
     
     var tasksCount: Int {
         get { return tasks.count }

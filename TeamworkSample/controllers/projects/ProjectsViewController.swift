@@ -12,9 +12,13 @@ import UIKit
 class ProjectsViewController: BaseTableViewController,
         UISplitViewControllerDelegate{
     
-    @IBOutlet var viewModel: ProjectsViewModel!
+    @IBOutlet var projectsViewModel: ProjectsViewModel!
+    @IBOutlet var companyViewModel: CompanyViewModel!
+    @IBOutlet var companyOverview: CompanyOverviewView!
     
     fileprivate func setupTableAndSplitView() {
+        title = "Teamwork Sample"
+        
         table.estimatedRowHeight = ProjectCell.height
         enableRefreshControl()
         
@@ -22,33 +26,41 @@ class ProjectsViewController: BaseTableViewController,
         splitViewController?.delegate = self
     }
     
-    fileprivate func setupViewModel() {
-        viewModel.defaultNetworkError = { [weak self] in
+    fileprivate func setupProjectsViewModel() {
+        projectsViewModel.defaultNetworkError = { [weak self] in
             self?.errorAlert(message: "Projects.Error.Loading".localized)
         }
-        viewModel.defaultResultError = viewModel.defaultNetworkError
-        viewModel.defaultWillLoad = { [weak self] in
+        projectsViewModel.defaultResultError = projectsViewModel.defaultNetworkError
+        projectsViewModel.defaultWillLoad = { [weak self] in
             self?.hudShow(message: "Projects.WillLoad".localized)
         }
-        viewModel.allProjects { [weak self] in
+        projectsViewModel.allProjects { [weak self] in
             self?.hudDismiss()
             self?.table.reloadData()
         }
     }
     
+    fileprivate func setupCompanyViewModel() {
+        companyViewModel.getAccount { [weak self] in
+            if let viewModel = self?.companyViewModel {
+                self?.companyOverview.configure(with: viewModel)
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Projects.Title".localized
         
         setupTableAndSplitView()
-        setupViewModel()
+        setupProjectsViewModel()
+        setupCompanyViewModel()
     }
     
     // MARK: - Refresh Control
     override func refreshData() {
         
-        viewModel.defaultWillLoad = nil
-        viewModel.allProjects { [weak self] in
+        projectsViewModel.defaultWillLoad = nil
+        projectsViewModel.allProjects { [weak self] in
             self?.table.reloadData()
             self?.endRefreshAnimation()
         }
@@ -67,7 +79,7 @@ class ProjectsViewController: BaseTableViewController,
         let cell = tableView.dequeueReusableCell(
             withIdentifier: ProjectCell.identifier) as! ProjectCell
         
-        let item = viewModel.one(at: indexPath.row)
+        let item = projectsViewModel.one(at: indexPath.row)
         cell.configure(with: item)
         
         return cell
@@ -75,12 +87,12 @@ class ProjectsViewController: BaseTableViewController,
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let item = viewModel.one(at: indexPath.row)
+        let item = projectsViewModel.one(at: indexPath.row)
         performSegue(withIdentifier: MainStoryboard.Segue.toTaskLists, sender: item)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.projectsCount
+        return projectsViewModel.projectsCount
     }
     
     // MARK: - Segue

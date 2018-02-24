@@ -6,13 +6,20 @@
   Copyright © 2018 Thiago Ricieri. All rights reserved.
 */
 
+// Agnostic
+"Loading" = "Loading...";
+
+// Account
+"Account.Fetching" = "Fetching data about your account. Hold on for just a second...";
+
 // Projects
-"Projects.Title" = "Projects";
+"Projects.Title" = "All Projects";
 "Projects.WillLoad" = "Loading projects...";
 "Projects.Error.Loading" = "Error loading projects. Please check your API Key";
 "Project.Date.NotSet" = "Date not set.";
 
 // Tasks Lists
+"TaskLists.All" = "All Task Lists";
 "TaskLists.Date.Start" = "starts";
 "TaskLists.Date.End" = "ends";
 "TaskLists.Title" = "Tasks Lists";
