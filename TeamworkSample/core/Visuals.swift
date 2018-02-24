@@ -11,12 +11,21 @@ import UIKit
 
 struct Visuals {
     
-    struct Tasks {
-        static let progressColor = UIColor.green
+    struct Account {
     }
     
     struct Projects {
         static let badgeBorderColor = UIColorFromRGB(rgb: 0xAAAAAA)
+        static let starredIcon = "starred"
+        static let nonStarredIcon = "non-starred"
+    }
+    
+    struct Lists {
+        static let progressColor = UIColor.green
+    }
+    
+    struct Tasks {
+        static let progressColor = UIColor.green
     }
 }
 
