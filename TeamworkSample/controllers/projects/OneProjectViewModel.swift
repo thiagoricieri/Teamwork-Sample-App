@@ -21,6 +21,9 @@ class OneProjectViewModel: BaseViewModel {
     var logoUrl: URL? {
         get { return URL(string: model.logo) }
     }
+    var starred: Bool {
+        get { return model.starred }
+    }
     var startDate: Date? {
         get { return model.startDate }
     }
@@ -29,6 +32,9 @@ class OneProjectViewModel: BaseViewModel {
     }
     var projectDescription: String {
         get { return model.projectDescription }
+    }
+    var tagsNames: [String] {
+        get { return model.tags.map { $0.name } }
     }
     var startToEndDate: String {
         get {

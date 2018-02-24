@@ -19,8 +19,16 @@ class CompanyOverviewView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        nameLabel.textColor = Visuals.textColor
+        companyNameLabel.textColor = Visuals.textColor
         nameLabel.text = "Loading".localized
         companyNameLabel.text = "Account.Fetching".localized
+        
+        allProjectsLabel.textColor = Visuals.lightTextColor
+        allProjectsLabel.backgroundColor = Visuals.secondaryBackgroundColor
+        
+        backgroundColor = Visuals.lightBackgroundColor
     }
     
     func configure(with company: CompanyViewModel) {

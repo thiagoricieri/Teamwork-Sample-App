@@ -12,6 +12,29 @@ import MBProgressHUD
 
 class BaseViewController: UIViewController {
     fileprivate(set) var currentHud: MBProgressHUD?
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+}
+
+// MARK: - Style
+extension BaseViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        if let bar = navigationController?.navigationBar {
+            bar.barStyle = .blackTranslucent
+            bar.barTintColor = Visuals.navigationBarColorDark
+            bar.tintColor = Visuals.tintColor
+            bar.setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
+            bar.isTranslucent = false
+            bar.titleTextAttributes = [
+                NSAttributedStringKey.foregroundColor: UIColor.white
+            ]
+        }
+    }
 }
 
 // MARK: - HUD

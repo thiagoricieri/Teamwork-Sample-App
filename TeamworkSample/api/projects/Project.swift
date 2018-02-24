@@ -17,6 +17,7 @@ struct Project: ApiObject {
     var starred = false
     var startDate: Date?
     var endDate: Date?
+    var tags = [Tag]()
     
     init(data: Dict) {
         id = data["id"] as? String ?? ""
@@ -30,5 +31,11 @@ struct Project: ApiObject {
         
         startDate = DateUtils.parse(_startDate)
         endDate = DateUtils.parse(_endDate)
+        
+        if let _tags = data["tags"] as? [Dict] {
+            _tags.forEach { tagData in
+                tags.append(Tag(data: tagData))
+            }
+        }
     }
 }

@@ -17,6 +17,7 @@ class ProjectCell: BaseTableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var startToEndDate: UILabel!
+    @IBOutlet weak var starredImage: UIImageView!
     
     func configure(with project: OneProjectViewModel) {
         nameLabel.text = project.name
@@ -25,5 +26,9 @@ class ProjectCell: BaseTableViewCell {
         
         accessoryType = UIDevice.current.userInterfaceIdiom == .phone ?
             .disclosureIndicator : .none
+        
+        starredImage.image = project.starred ?
+            UIImage(named: Visuals.Projects.starredIcon) :
+            UIImage(named: Visuals.Projects.nonStarredIcon)
     }
 }
