@@ -13,6 +13,8 @@
 "Project.Date.NotSet" = "Date not set.";
 
 // Tasks Lists
+"TaskLists.Date.Start" = "starts";
+"TaskLists.Date.End" = "ends";
 "TaskLists.Title" = "Tasks Lists";
 "TaskLists.WillLoad" = "Loading Lists...";
 "TaskLists.Error.Loading" = "There was an error loading the lists of this project.";

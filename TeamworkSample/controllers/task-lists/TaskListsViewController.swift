@@ -12,6 +12,7 @@ import UIKit
 class TaskListsViewController: BaseTableViewController {
     
     @IBOutlet var viewModel: TaskListsViewModel!
+    @IBOutlet weak var projectOverview: ProjectOverviewView!
     
     var project: OneProjectViewModel!
     
@@ -20,6 +21,7 @@ class TaskListsViewController: BaseTableViewController {
         self.title = project.name
         self.table.estimatedRowHeight = TaskListCell.height
         self.enableRefreshControl()
+        self.projectOverview.configure(with: project)
         
         viewModel.defaultNetworkError = {[weak self] in
             self?.errorAlert(message: "TaskLists.Error.Loading".localized)

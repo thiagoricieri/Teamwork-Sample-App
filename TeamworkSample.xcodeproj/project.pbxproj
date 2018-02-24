@@ -14,6 +14,8 @@
 		B02D9ED7204164010044BB0E /* TaskListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02D9ED3204164010044BB0E /* TaskListsViewController.swift */; };
 		B02D9ED8204164010044BB0E /* OneTaskListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02D9ED4204164010044BB0E /* OneTaskListViewModel.swift */; };
 		B02D9ED9204164010044BB0E /* TaskListsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02D9ED5204164010044BB0E /* TaskListsViewModel.swift */; };
+		B02D9EDB204176430044BB0E /* DateBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02D9EDA204176430044BB0E /* DateBadgeView.swift */; };
+		B02D9EDD204178430044BB0E /* ProjectOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02D9EDC204178430044BB0E /* ProjectOverviewView.swift */; };
 		B0342B002040AB8200631CF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0342AFF2040AB8200631CF7 /* Main.storyboard */; };
 		B0342B022040AC4F00631CF7 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0342B012040AC4F00631CF7 /* Router.swift */; };
 		B0342B542040BE8F00631CF7 /* Teamwork.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0342B532040BE8F00631CF7 /* Teamwork.plist */; };
@@ -82,6 +84,8 @@
 		B02D9ED3204164010044BB0E /* TaskListsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListsViewController.swift; sourceTree = "<group>"; };
 		B02D9ED4204164010044BB0E /* OneTaskListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneTaskListViewModel.swift; sourceTree = "<group>"; };
 		B02D9ED5204164010044BB0E /* TaskListsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListsViewModel.swift; sourceTree = "<group>"; };
+		B02D9EDA204176430044BB0E /* DateBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateBadgeView.swift; sourceTree = "<group>"; };
+		B02D9EDC204178430044BB0E /* ProjectOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectOverviewView.swift; sourceTree = "<group>"; };
 		B0342AFF2040AB8200631CF7 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B0342B012040AC4F00631CF7 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		B0342B532040BE8F00631CF7 /* Teamwork.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Teamwork.plist; sourceTree = "<group>"; };
@@ -185,6 +189,7 @@
 				B02D9ED5204164010044BB0E /* TaskListsViewModel.swift */,
 				B02D9ED3204164010044BB0E /* TaskListsViewController.swift */,
 				B02D9ED2204164010044BB0E /* TaskListCell.swift */,
+				B02D9EDC204178430044BB0E /* ProjectOverviewView.swift */,
 			);
 			path = "task-lists";
 			sourceTree = "<group>";
@@ -262,6 +267,7 @@
 				B0342B692040C6DC00631CF7 /* BaseTableViewController.swift */,
 				B0342B6B2040C73E00631CF7 /* BaseTableViewCell.swift */,
 				B0342B902041038E00631CF7 /* ProgressFillView.swift */,
+				B02D9EDA204176430044BB0E /* DateBadgeView.swift */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -657,6 +663,7 @@
 				B0342B602040C58D00631CF7 /* StoryboardContext.swift in Sources */,
 				B0342B872040E3D600631CF7 /* OneTaskViewModel.swift in Sources */,
 				B0342B8F2040FBC000631CF7 /* DateUtils.swift in Sources */,
+				B02D9EDB204176430044BB0E /* DateBadgeView.swift in Sources */,
 				B0342B932041097F00631CF7 /* Visuals.swift in Sources */,
 				B02D9ED0204163D20044BB0E /* TaskList.swift in Sources */,
 				B0342B682040C6A600631CF7 /* BaseViewController.swift in Sources */,
@@ -675,6 +682,7 @@
 				B02D9ED6204164010044BB0E /* TaskListCell.swift in Sources */,
 				B0342B852040E3CC00631CF7 /* TasksViewController.swift in Sources */,
 				B02D9ED9204164010044BB0E /* TaskListsViewModel.swift in Sources */,
+				B02D9EDD204178430044BB0E /* ProjectOverviewView.swift in Sources */,
 				B0342B802040E16300631CF7 /* Task.swift in Sources */,
 				B0342B582040BF1200631CF7 /* RouterConfig.swift in Sources */,
 				B0342B772040D4CA00631CF7 /* ProjectCell.swift in Sources */,

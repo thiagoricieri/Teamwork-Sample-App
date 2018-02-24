@@ -16,6 +16,7 @@ struct Visuals {
     }
     
     struct Projects {
+        static let badgeBorderColor = UIColorFromRGB(rgb: 0xAAAAAA)
     }
 }
 

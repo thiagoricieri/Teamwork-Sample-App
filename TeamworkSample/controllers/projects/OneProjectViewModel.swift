@@ -21,6 +21,12 @@ class OneProjectViewModel: BaseViewModel {
     var logoUrl: URL? {
         get { return URL(string: model.logo) }
     }
+    var startDate: Date? {
+        get { return model.startDate }
+    }
+    var endDate: Date? {
+        get { return model.endDate }
+    }
     var projectDescription: String {
         get { return model.projectDescription }
     }
