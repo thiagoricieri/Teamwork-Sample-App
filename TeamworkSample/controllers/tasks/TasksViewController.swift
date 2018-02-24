@@ -18,17 +18,13 @@ class TasksViewController: BaseTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = taskList.name
+        self.table.estimatedRowHeight = TaskCell.height
+        self.enableRefreshControl()
         
         viewModel.defaultNetworkError = { [weak self] in
             self?.errorAlert(message: "Tasks.Error.Loading".localized)
         }
         viewModel.defaultResultError = viewModel.defaultNetworkError
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.enableRefreshControl()
-        
         viewModel.defaultWillLoad = { [weak self] in
             self?.hudShow(message: "Tasks.WillLoad".localized)
         }
@@ -49,11 +45,6 @@ class TasksViewController: BaseTableViewController {
     }
     
     // MARK: - Table View
-    func tableView(_ tableView: UITableView,
-                   heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return TaskCell.height
-    }
-    
     override func tableView(_ tableView: UITableView,
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(

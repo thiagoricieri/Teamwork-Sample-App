@@ -16,17 +16,13 @@ class ProjectsViewController: BaseTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Projects.Title".localized
+        self.table.estimatedRowHeight = ProjectCell.height
+        self.enableRefreshControl()
         
         viewModel.defaultNetworkError = { [weak self] in
             self?.errorAlert(message: "Projects.Error.Loading".localized)
         }
         viewModel.defaultResultError = viewModel.defaultNetworkError
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.enableRefreshControl()
-        
         viewModel.defaultWillLoad = { [weak self] in
             self?.hudShow(message: "Projects.WillLoad".localized)
         }
@@ -47,11 +43,6 @@ class ProjectsViewController: BaseTableViewController {
     }
     
     // MARK: - Table View
-    func tableView(_ tableView: UITableView,
-                   heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return ProjectCell.height
-    }
-    
     override func tableView(_ tableView: UITableView,
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(

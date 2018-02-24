@@ -22,6 +22,8 @@ class BaseTableViewController: BaseViewController,
         super.viewDidLoad()
         table.delegate = self
         table.dataSource = self
+        table.rowHeight = UITableViewAutomaticDimension
+        table.estimatedRowHeight = 60
     }
     
     func enableRefreshControl() {
