@@ -28,13 +28,7 @@ struct Project: ApiObject {
         let _startDate = data["startDate"] as? String ?? ""
         let _endDate = data["startDate"] as? String ?? ""
         
-        startDate = parseProjectDate(_startDate)
-        endDate = parseProjectDate(_endDate)
+        startDate = DateUtils.parse(_startDate)
+        endDate = DateUtils.parse(_endDate)
     }
-}
-
-fileprivate let df = DateFormatter()
-fileprivate func parseProjectDate(_ string: String) -> Date? {
-    df.dateFormat = "yyyyMMdd"
-    return df.date(from: string)
 }

@@ -40,8 +40,7 @@ enum Router: URLRequestConvertible {
         urlRequest.httpMethod = result.method
         
         return try JSONEncoding.default.encode(urlRequest,
-                                               with: result.parameters as Parameters?
-        )
+                       with: result.parameters as Parameters?)
     }
 }
 
