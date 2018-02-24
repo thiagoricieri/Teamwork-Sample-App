@@ -12,7 +12,7 @@ import UIKit
 class MainStoryboard: StoryboardContext {
     
     struct Segue {
-        static let toProjects = "toProjects"
+        static let toTasks = "toTasks"
     }
     
     override init() {
@@ -21,5 +21,9 @@ class MainStoryboard: StoryboardContext {
     
     func projectsViewController() -> ProjectsViewController {
         return controller(name: "ProjectsViewController") as! ProjectsViewController
+    }
+    
+    func tasksViewController() -> TasksViewController {
+        return controller(name: "TasksViewController") as! TasksViewController
     }
 }

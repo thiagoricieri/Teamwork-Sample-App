@@ -9,4 +9,8 @@
 import Foundation
 
 class BaseViewModel: NSObject {
+    
+    public var defaultWillLoad: Callback?
+    public var defaultNetworkError: Callback?
+    public var defaultResultError: Callback?
 }

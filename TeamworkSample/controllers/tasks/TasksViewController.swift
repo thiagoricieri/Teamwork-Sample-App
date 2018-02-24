@@ -1,5 +1,5 @@
 //
-//  ProjectsViewController.swift
+//  TasksViewController.swift
 //  TeamworkSample
 //
 //  Created by Thiago Ricieri on 23/02/2018.
@@ -9,19 +9,21 @@
 import Foundation
 import UIKit
 
-class ProjectsViewController: BaseTableViewController {
+class TasksViewController: BaseTableViewController {
     
-    @IBOutlet var viewModel: ProjectsViewModel!
+    @IBOutlet var viewModel: TasksViewModel!
+    
+    var projectId: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Projects.Title".localized
+        self.title = "Tasks.Title".localized
         
         viewModel.defaultWillLoad = {
-            self.hudShow(message: "Projects.WillLoad".localized)
+            self.hudShow(message: "Tasks.WillLoad".localized)
         }
         viewModel.defaultNetworkError = {
-            self.errorAlert(message: "Projects.Error.Loading".localized)
+            self.errorAlert(message: "Tasks.Error.Loading".localized)
         }
         viewModel.defaultResultError = viewModel.defaultNetworkError
     }
@@ -29,7 +31,7 @@ class ProjectsViewController: BaseTableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        viewModel.allProjects {
+        viewModel.tasks(of: projectId) {
             self.hudDismiss()
             self.table.reloadData()
         }
@@ -38,15 +40,23 @@ class ProjectsViewController: BaseTableViewController {
     // MARK: -
     func tableView(_ tableView: UITableView,
                    heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return ProjectCell.height
+        return TaskCell.height
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return viewModel.sectionsCount
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return viewModel.section(at: section).name
     }
     
     override func tableView(_ tableView: UITableView,
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(
-            withIdentifier: ProjectCell.identifier) as! ProjectCell
+            withIdentifier: TaskCell.identifier) as! TaskCell
         
-        let item = viewModel.one(at: indexPath.row)
+        let item = viewModel.one(at: indexPath.row, section: indexPath.section)
         cell.configure(with: item)
         
         return cell
@@ -54,20 +64,9 @@ class ProjectsViewController: BaseTableViewController {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let item = viewModel.one(at: indexPath.row)
-        performSegue(withIdentifier: MainStoryboard.Segue.toTasks, sender: item)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.projectsCount
-    }
-    
-    // MARK: - Segue
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == MainStoryboard.Segue.toTasks {
-            let dest = segue.destination as! TasksViewController
-            let project = sender as! OneProjectViewModel
-            dest.projectId = project.id
-        }
+        return viewModel.countTasks(section: section)
     }
 }

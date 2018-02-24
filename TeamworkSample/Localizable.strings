@@ -6,7 +6,14 @@
   Copyright © 2018 Thiago Ricieri. All rights reserved.
 */
 
+// Projects
 "Projects.Title" = "Projects";
 "Projects.WillLoad" = "Loading projects...";
 "Projects.Error.Loading" = "Error loading projects. Please check your API Key";
 "Project.Date.NotSet" = "Date not set.";
+
+// Tasks
+"Tasks.Title" = "Tasks";
+"Tasks.WillLoad" = "Loading tasks...";
+"Tasks.Error.Loading" = "There was an error loading the tasks of this project.";
+"Tasks.Responsible.Anyone" = "Anyone is responsible";

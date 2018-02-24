@@ -105,6 +105,7 @@
                     <connections>
                         <outlet property="table" destination="1sR-k6-Dml" id="kTd-iN-2Zv"/>
                         <outlet property="viewModel" destination="ibB-Qb-KSV" id="8XK-it-ouA"/>
+                        <segue destination="1jl-Zi-8VM" kind="show" identifier="toTasks" id="cSd-xV-iLy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="52Q-Z0-es9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -116,6 +117,85 @@
                 </customObject>
             </objects>
             <point key="canvasLocation" x="-290.39999999999998" y="-156.07196401799101"/>
+        </scene>
+        <!--Tasks View Controller-->
+        <scene sceneID="c2F-Cl-6K7">
+            <objects>
+                <viewController storyboardIdentifier="TasksViewController" id="1jl-Zi-8VM" customClass="TasksViewController" customModule="TeamworkSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PH2-xB-r3S">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Mng-Kw-60B">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TaskCell" rowHeight="80" id="P2O-E5-hsi" customClass="TaskCell" customModule="TeamworkSample" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="P2O-E5-hsi" id="J6o-Fz-Hpr">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{name}" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sdb-zn-uCg">
+                                                    <rect key="frame" x="16" y="16" width="343" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="3qE-1T-SAl"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{date}" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iD2-dg-FCD">
+                                                    <rect key="frame" x="15" y="39" width="344" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="FF1-2j-p87"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Sdb-zn-uCg" firstAttribute="leading" secondItem="J6o-Fz-Hpr" secondAttribute="leading" constant="16" id="84B-TW-ujq"/>
+                                                <constraint firstItem="Sdb-zn-uCg" firstAttribute="top" secondItem="J6o-Fz-Hpr" secondAttribute="top" constant="16" id="Ecn-Ej-y9R"/>
+                                                <constraint firstItem="iD2-dg-FCD" firstAttribute="leading" secondItem="J6o-Fz-Hpr" secondAttribute="leading" constant="15" id="NKs-UQ-ib1"/>
+                                                <constraint firstItem="iD2-dg-FCD" firstAttribute="top" secondItem="Sdb-zn-uCg" secondAttribute="bottom" constant="2" id="j2a-Kz-z9n"/>
+                                                <constraint firstAttribute="trailing" secondItem="iD2-dg-FCD" secondAttribute="trailing" constant="16" id="mn5-qs-McV"/>
+                                                <constraint firstAttribute="trailing" secondItem="Sdb-zn-uCg" secondAttribute="trailing" constant="16" id="n6H-m7-CR6"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="contentLabel" destination="Sdb-zn-uCg" id="VaJ-zA-Auv"/>
+                                            <outlet property="responsibleLabel" destination="iD2-dg-FCD" id="h4x-9E-7yR"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="eGc-dH-h3A" firstAttribute="bottom" secondItem="Mng-Kw-60B" secondAttribute="bottom" id="TtQ-GE-cKh"/>
+                            <constraint firstItem="Mng-Kw-60B" firstAttribute="top" secondItem="eGc-dH-h3A" secondAttribute="top" id="XiA-zB-ufe"/>
+                            <constraint firstItem="eGc-dH-h3A" firstAttribute="trailing" secondItem="Mng-Kw-60B" secondAttribute="trailing" id="x2n-gs-qOa"/>
+                            <constraint firstItem="Mng-Kw-60B" firstAttribute="leading" secondItem="eGc-dH-h3A" secondAttribute="leading" id="xOC-HZ-pVF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eGc-dH-h3A"/>
+                    </view>
+                    <connections>
+                        <outlet property="table" destination="Mng-Kw-60B" id="R3f-iV-xNj"/>
+                        <outlet property="viewModel" destination="f0f-ih-lUF" id="SbE-PN-jms"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tfn-WY-fCS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="Y7a-g5-il4" customClass="TasksApi" customModule="TeamworkSample" customModuleProvider="target"/>
+                <customObject id="f0f-ih-lUF" customClass="TasksViewModel" customModule="TeamworkSample" customModuleProvider="target">
+                    <connections>
+                        <outlet property="api" destination="Y7a-g5-il4" id="rJ2-rx-JEg"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="580" y="-156"/>
         </scene>
     </scenes>
 </document>

@@ -14,9 +14,6 @@ class ProjectsViewModel: BaseViewModel {
     @IBOutlet var api: ProjectsApi!
     
     var projects = [OneProjectViewModel]()
-    var defaultWillLoad: Callback?
-    var defaultNetworkError: Callback?
-    var defaultResultError: Callback?
     
     var projectsCount: Int {
         get { return projects.count }

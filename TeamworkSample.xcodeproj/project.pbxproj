@@ -30,6 +30,13 @@
 		B0342B792040D69E00631CF7 /* OneProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0342B782040D69E00631CF7 /* OneProjectViewModel.swift */; };
 		B0342B7B2040DB1200631CF7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0342B7A2040DB1200631CF7 /* Extensions.swift */; };
 		B0342B7D2040DB3200631CF7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B0342B7C2040DB3200631CF7 /* Localizable.strings */; };
+		B0342B802040E16300631CF7 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0342B7F2040E16300631CF7 /* Task.swift */; };
+		B0342B822040E16B00631CF7 /* TaskApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0342B812040E16B00631CF7 /* TaskApi.swift */; };
+		B0342B852040E3CC00631CF7 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0342B842040E3CC00631CF7 /* TasksViewController.swift */; };
+		B0342B872040E3D600631CF7 /* OneTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0342B862040E3D600631CF7 /* OneTaskViewModel.swift */; };
+		B0342B892040E3E000631CF7 /* TasksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0342B882040E3E000631CF7 /* TasksViewModel.swift */; };
+		B0342B8B2040E3EA00631CF7 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0342B8A2040E3EA00631CF7 /* TaskCell.swift */; };
+		B0342B8D2040E87000631CF7 /* TodoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0342B8C2040E87000631CF7 /* TodoList.swift */; };
 		B03F2BEF2040A96D0067CC1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03F2BEE2040A96D0067CC1E /* AppDelegate.swift */; };
 		B03F2BF62040A96D0067CC1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B03F2BF52040A96D0067CC1E /* Assets.xcassets */; };
 		B03F2BF92040A96D0067CC1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B03F2BF72040A96D0067CC1E /* LaunchScreen.storyboard */; };
@@ -84,6 +91,13 @@
 		B0342B782040D69E00631CF7 /* OneProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneProjectViewModel.swift; sourceTree = "<group>"; };
 		B0342B7A2040DB1200631CF7 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		B0342B7C2040DB3200631CF7 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		B0342B7F2040E16300631CF7 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		B0342B812040E16B00631CF7 /* TaskApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskApi.swift; sourceTree = "<group>"; };
+		B0342B842040E3CC00631CF7 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
+		B0342B862040E3D600631CF7 /* OneTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneTaskViewModel.swift; sourceTree = "<group>"; };
+		B0342B882040E3E000631CF7 /* TasksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewModel.swift; sourceTree = "<group>"; };
+		B0342B8A2040E3EA00631CF7 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		B0342B8C2040E87000631CF7 /* TodoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoList.swift; sourceTree = "<group>"; };
 		B03F2BEB2040A96D0067CC1E /* TeamworkSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeamworkSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B03F2BEE2040A96D0067CC1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B03F2BF52040A96D0067CC1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -164,6 +178,7 @@
 			children = (
 				B0342B662040C69B00631CF7 /* common */,
 				B0342B632040C68700631CF7 /* projects */,
+				B0342B832040E3B500631CF7 /* tasks */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -186,6 +201,7 @@
 				B0342B742040CA2400631CF7 /* BaseApi.swift */,
 				B0342B5C2040C39400631CF7 /* ApiObject.swift */,
 				B0342B732040C9F400631CF7 /* projects */,
+				B0342B7E2040E15100631CF7 /* tasks */,
 			);
 			path = api;
 			sourceTree = "<group>";
@@ -228,6 +244,27 @@
 				B0342B6F2040C82900631CF7 /* ProjectsApi.swift */,
 			);
 			path = projects;
+			sourceTree = "<group>";
+		};
+		B0342B7E2040E15100631CF7 /* tasks */ = {
+			isa = PBXGroup;
+			children = (
+				B0342B7F2040E16300631CF7 /* Task.swift */,
+				B0342B812040E16B00631CF7 /* TaskApi.swift */,
+				B0342B8C2040E87000631CF7 /* TodoList.swift */,
+			);
+			path = tasks;
+			sourceTree = "<group>";
+		};
+		B0342B832040E3B500631CF7 /* tasks */ = {
+			isa = PBXGroup;
+			children = (
+				B0342B882040E3E000631CF7 /* TasksViewModel.swift */,
+				B0342B862040E3D600631CF7 /* OneTaskViewModel.swift */,
+				B0342B842040E3CC00631CF7 /* TasksViewController.swift */,
+				B0342B8A2040E3EA00631CF7 /* TaskCell.swift */,
+			);
+			path = tasks;
 			sourceTree = "<group>";
 		};
 		B03F2BE22040A96D0067CC1E = {
@@ -586,19 +623,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0342B702040C82900631CF7 /* ProjectsApi.swift in Sources */,
+				B0342B892040E3E000631CF7 /* TasksViewModel.swift in Sources */,
 				B0342B602040C58D00631CF7 /* StoryboardContext.swift in Sources */,
+				B0342B872040E3D600631CF7 /* OneTaskViewModel.swift in Sources */,
 				B0342B682040C6A600631CF7 /* BaseViewController.swift in Sources */,
 				B0342B792040D69E00631CF7 /* OneProjectViewModel.swift in Sources */,
 				B0342B022040AC4F00631CF7 /* Router.swift in Sources */,
 				B03F2BEF2040A96D0067CC1E /* AppDelegate.swift in Sources */,
+				B0342B822040E16B00631CF7 /* TaskApi.swift in Sources */,
 				B0342B6C2040C73E00631CF7 /* BaseTableViewCell.swift in Sources */,
 				B0342B7B2040DB1200631CF7 /* Extensions.swift in Sources */,
 				B0342B5D2040C39400631CF7 /* ApiObject.swift in Sources */,
 				B0342B562040BEE600631CF7 /* Types.swift in Sources */,
 				B0342B652040C69600631CF7 /* ProjectsViewController.swift in Sources */,
 				B0342B622040C5AD00631CF7 /* MainStoryboard.swift in Sources */,
+				B0342B8D2040E87000631CF7 /* TodoList.swift in Sources */,
+				B0342B852040E3CC00631CF7 /* TasksViewController.swift in Sources */,
+				B0342B802040E16300631CF7 /* Task.swift in Sources */,
 				B0342B582040BF1200631CF7 /* RouterConfig.swift in Sources */,
 				B0342B772040D4CA00631CF7 /* ProjectCell.swift in Sources */,
+				B0342B8B2040E3EA00631CF7 /* TaskCell.swift in Sources */,
 				B0342B722040C9D800631CF7 /* BaseViewModel.swift in Sources */,
 				B0342B6E2040C79F00631CF7 /* ProjectsViewModel.swift in Sources */,
 				B0342B752040CA2400631CF7 /* BaseApi.swift in Sources */,

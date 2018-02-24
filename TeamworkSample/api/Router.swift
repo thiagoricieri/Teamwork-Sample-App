@@ -14,14 +14,18 @@ enum Router: URLRequestConvertible {
     
     static let config: RouterConfig = ProductionRouterConfig()
     
+    // MARK: - API Endpoints
     case projects()
+    case tasks(projectId: String)
     
     func asURLRequest() throws -> URLRequest {
         
         var result: (path: String, method: String, parameters: Dict?) {
             switch self {
-            case .projects():
-                return ("/projects.json", "GET", nil)
+                case .projects():
+                    return ("/projects.json", "GET", nil)
+                case .tasks(let projectId):
+                    return ("/projects/\(projectId)/tasks.json", "GET", nil)
             }
         }
         
