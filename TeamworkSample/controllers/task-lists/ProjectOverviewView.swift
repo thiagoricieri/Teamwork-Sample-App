@@ -18,6 +18,7 @@ class ProjectOverviewView: UIView {
     @IBOutlet weak var endBadge: DateBadgeView!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var taskListsLabel: UILabel!
+    @IBOutlet weak var connectView: UIView!
     @IBOutlet weak var tagListHeight: NSLayoutConstraint!
     @IBOutlet weak var tagListView: TagListView!
     
@@ -26,6 +27,11 @@ class ProjectOverviewView: UIView {
         
         taskListsLabel.text = "TaskLists.All".localized
         tagListView.textFont = UIFont.systemFont(ofSize: 17.0)
+        
+        backgroundColor = Visuals.lightBackgroundColor
+        taskListsLabel.textColor = Visuals.lightTextColor
+        taskListsLabel.backgroundColor = Visuals.secondaryBackgroundColor
+        connectView.backgroundColor = Visuals.secondaryBackgroundColor
         
         projectLogo.layer.shadowColor = UIColor.black.cgColor
         projectLogo.layer.shadowRadius = 6

@@ -11,21 +11,22 @@ import UIKit
 
 struct Visuals {
     
-    struct Account {
-    }
+    static let textColor = UIColorFromRGB(rgb: 0x31455C)
+    static let lightTextColor = UIColorFromRGB(rgb: 0xa5b9d1)
+    static let tintColor = UIColorFromRGB(rgb: 0x86E6FB)
+    static let secondaryBackgroundColor = UIColorFromRGB(rgb: 0x7087a3)
+    static let navigationBarColor = UIColorFromRGB(rgb: 0x3D5673)
+    static let navigationBarColorDark = UIColorFromRGB(rgb: 0x31455C)
+    static let lightBackgroundColor = UIColorFromRGB(rgb: 0xEFEFF4)
     
     struct Projects {
-        static let badgeBorderColor = UIColorFromRGB(rgb: 0xAAAAAA)
+        static let badgeBorderColor = UIColorFromRGB(rgb: 0x7087a3)
         static let starredIcon = "starred"
         static let nonStarredIcon = "non-starred"
     }
     
-    struct Lists {
-        static let progressColor = UIColor.green
-    }
-    
     struct Tasks {
-        static let progressColor = UIColor.green
+        static let progressColor = UIColorFromRGB(rgb: 0x1D8CEB)
     }
 }
 
