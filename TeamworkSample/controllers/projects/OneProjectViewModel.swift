@@ -30,6 +30,9 @@ class OneProjectViewModel: BaseViewModel {
     var projectDescription: String {
         get { return model.projectDescription }
     }
+    var tagsNames: [String] {
+        get { return model.tags.map { $0.name } }
+    }
     var startToEndDate: String {
         get {
             if  let startDate = model.startDate,

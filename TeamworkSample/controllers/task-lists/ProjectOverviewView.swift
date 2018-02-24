@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import SDWebImage
+import TagListView
 
 class ProjectOverviewView: UIView {
     
@@ -17,11 +18,14 @@ class ProjectOverviewView: UIView {
     @IBOutlet weak var endBadge: DateBadgeView!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var taskListsLabel: UILabel!
+    @IBOutlet weak var tagListHeight: NSLayoutConstraint!
+    @IBOutlet weak var tagListView: TagListView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         taskListsLabel.text = "TaskLists.All".localized
+        tagListView.textFont = UIFont.systemFont(ofSize: 17.0)
         
         projectLogo.layer.shadowColor = UIColor.black.cgColor
         projectLogo.layer.shadowRadius = 6
@@ -34,5 +38,6 @@ class ProjectOverviewView: UIView {
         startBadge.configure(with: project.startDate, type: .start)
         endBadge.configure(with: project.endDate, type: .end)
         descriptionLabel.text = project.projectDescription
+        tagListView.addTags(project.tagsNames)
     }
 }

@@ -4,17 +4,20 @@ PODS:
   - SDWebImage (3.7.6):
     - SDWebImage/Core (= 3.7.6)
   - SDWebImage/Core (3.7.6)
+  - TagListView (1.3.0)
 
 DEPENDENCIES:
   - Alamofire
   - MBProgressHUD
   - SDWebImage (~> 3.7.3)
+  - TagListView (~> 1.0)
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
+  TagListView: 669f7d4455003c877655875d34829731c4191528
 
-PODFILE CHECKSUM: a1de25b6adac74a2f871e5489c299085eaf3fff9
+PODFILE CHECKSUM: 3bdb2a6d93766a0b617ca2af83f1ced8d2c1325d
 
 COCOAPODS: 1.4.0
