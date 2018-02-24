@@ -16,9 +16,12 @@ class ProjectOverviewView: UIView {
     @IBOutlet weak var startBadge: DateBadgeView!
     @IBOutlet weak var endBadge: DateBadgeView!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var taskListsLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        taskListsLabel.text = "TaskLists.All".localized
         
         projectLogo.layer.shadowColor = UIColor.black.cgColor
         projectLogo.layer.shadowRadius = 6

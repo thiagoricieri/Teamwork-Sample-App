@@ -22,5 +22,8 @@ class ProjectCell: BaseTableViewCell {
         nameLabel.text = project.name
         descriptionLabel.text = project.projectDescription
         startToEndDate.text = project.startToEndDate
+        
+        accessoryType = UIDevice.current.userInterfaceIdiom == .phone ?
+            .disclosureIndicator : .none
     }
 }

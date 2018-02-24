@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LvP-4k-9bK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MBB-8m-kmM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -26,6 +26,19 @@
             </objects>
             <point key="canvasLocation" x="-1132" y="-156"/>
         </scene>
+        <!--Split View Controller-->
+        <scene sceneID="BkQ-mt-EvD">
+            <objects>
+                <splitViewController id="MBB-8m-kmM" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="LvP-4k-9bK" kind="relationship" relationship="masterViewController" id="mPe-8z-vOl"/>
+                        <segue destination="DNX-ke-MIe" kind="relationship" relationship="detailViewController" id="eLR-D5-5QK"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sBG-c0-q0L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2074" y="225"/>
+        </scene>
         <!--Projects View Controller-->
         <scene sceneID="Fu2-ul-qds">
             <objects>
@@ -37,9 +50,65 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1sR-k6-Dml">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="FvG-bt-vQB" customClass="CompanyOverviewView" customModule="TeamworkSample" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="168"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d52-ZC-IbS">
+                                            <rect key="frame" x="16" y="16" width="150" height="103"/>
+                                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="150" id="iMN-7S-96n"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Projects" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRA-jR-kx9">
+                                            <rect key="frame" x="0.0" y="135" width="375" height="33"/>
+                                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="33" id="GiP-ef-VFR"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                            <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{name}" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYn-12-Zeu">
+                                            <rect key="frame" x="174" y="16" width="185" height="21"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{company name}" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtp-qK-yuJ">
+                                            <rect key="frame" x="174" y="45" width="185" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="aRA-jR-kx9" firstAttribute="top" secondItem="d52-ZC-IbS" secondAttribute="bottom" constant="16" id="8qT-U1-Lqb"/>
+                                        <constraint firstItem="mYn-12-Zeu" firstAttribute="leading" secondItem="d52-ZC-IbS" secondAttribute="trailing" constant="8" id="9Ak-6s-Y7V"/>
+                                        <constraint firstItem="mYn-12-Zeu" firstAttribute="top" secondItem="FvG-bt-vQB" secondAttribute="top" constant="16" id="Co8-fx-K19"/>
+                                        <constraint firstAttribute="trailing" secondItem="mYn-12-Zeu" secondAttribute="trailing" constant="16" id="FMx-a5-yrd"/>
+                                        <constraint firstAttribute="trailing" secondItem="gtp-qK-yuJ" secondAttribute="trailing" constant="16" id="PQ0-pn-7Hj"/>
+                                        <constraint firstAttribute="trailing" secondItem="aRA-jR-kx9" secondAttribute="trailing" id="aop-Hu-sG8"/>
+                                        <constraint firstItem="aRA-jR-kx9" firstAttribute="leading" secondItem="FvG-bt-vQB" secondAttribute="leading" id="cKX-ah-NDA"/>
+                                        <constraint firstItem="gtp-qK-yuJ" firstAttribute="leading" secondItem="d52-ZC-IbS" secondAttribute="trailing" constant="8" id="jM0-zs-ACD"/>
+                                        <constraint firstItem="d52-ZC-IbS" firstAttribute="top" secondItem="FvG-bt-vQB" secondAttribute="top" constant="16" id="l4K-Yy-Cx2"/>
+                                        <constraint firstItem="gtp-qK-yuJ" firstAttribute="top" secondItem="mYn-12-Zeu" secondAttribute="bottom" constant="8" id="l6o-j6-rjW"/>
+                                        <constraint firstAttribute="bottom" secondItem="aRA-jR-kx9" secondAttribute="bottom" id="mpO-E0-z8D"/>
+                                        <constraint firstItem="d52-ZC-IbS" firstAttribute="leading" secondItem="FvG-bt-vQB" secondAttribute="leading" constant="16" id="v0C-WU-VVb"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="allProjectsLabel" destination="aRA-jR-kx9" id="61y-Rg-qiL"/>
+                                        <outlet property="companyLogo" destination="d52-ZC-IbS" id="b8v-OL-0rc"/>
+                                        <outlet property="companyNameLabel" destination="gtp-qK-yuJ" id="ibW-gC-nAw"/>
+                                        <outlet property="nameLabel" destination="mYn-12-Zeu" id="hkR-6Q-Fh0"/>
+                                    </connections>
+                                </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ProjectCell" rowHeight="150" id="YJ8-yj-DRg" customClass="ProjectCell" customModule="TeamworkSample" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="150"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ProjectCell" rowHeight="150" id="YJ8-yj-DRg" customClass="ProjectCell" customModule="TeamworkSample" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="196" width="375" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YJ8-yj-DRg" id="teD-lM-Cox">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="150"/>
@@ -104,22 +173,48 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ukh-aD-TKw"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Acn-gO-o3x"/>
+                    <navigationItem key="navigationItem" id="Acn-gO-o3x">
+                        <barButtonItem key="backBarButtonItem" title=" " id="eT8-Kz-VCM"/>
+                    </navigationItem>
                     <connections>
+                        <outlet property="companyOverview" destination="FvG-bt-vQB" id="4Gb-Cf-OlL"/>
+                        <outlet property="companyViewModel" destination="bkb-tz-NDa" id="aag-ld-Ngg"/>
+                        <outlet property="projectsViewModel" destination="ibB-Qb-KSV" id="8XK-it-ouA"/>
                         <outlet property="table" destination="1sR-k6-Dml" id="kTd-iN-2Zv"/>
-                        <outlet property="viewModel" destination="ibB-Qb-KSV" id="8XK-it-ouA"/>
-                        <segue destination="idn-u7-CXr" kind="show" identifier="toTaskLists" id="4jd-yd-prs"/>
+                        <segue destination="DNX-ke-MIe" kind="showDetail" identifier="toTaskLists" id="BZ8-vD-mxB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="52Q-Z0-es9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="bkb-tz-NDa" customClass="CompanyViewModel" customModule="TeamworkSample" customModuleProvider="target">
+                    <connections>
+                        <outlet property="api" destination="wah-Pz-KLn" id="WBx-ym-h5E"/>
+                    </connections>
+                </customObject>
                 <customObject id="OS3-45-cyt" customClass="ProjectsApi" customModule="TeamworkSample" customModuleProvider="target"/>
+                <customObject id="wah-Pz-KLn" customClass="AccountApi" customModule="TeamworkSample" customModuleProvider="target"/>
                 <customObject id="ibB-Qb-KSV" customClass="ProjectsViewModel" customModule="TeamworkSample" customModuleProvider="target">
                     <connections>
                         <outlet property="api" destination="OS3-45-cyt" id="Epe-rG-7Mz"/>
                     </connections>
                 </customObject>
             </objects>
-            <point key="canvasLocation" x="-290.39999999999998" y="-156.07196401799101"/>
+            <point key="canvasLocation" x="-287.19999999999999" y="-156.07196401799101"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="u7T-Ep-TLQ">
+            <objects>
+                <navigationController id="DNX-ke-MIe" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5SV-rx-w8T">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="idn-u7-CXr" kind="relationship" relationship="rootViewController" id="HRg-C9-X4G"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Ma-kg-hJr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1132" y="657"/>
         </scene>
         <!--Task Lists View Controller-->
         <scene sceneID="kn3-gD-5eN">
@@ -272,10 +367,11 @@
                                         <outlet property="endBadge" destination="hcf-Zq-fJm" id="Fm7-LW-ynF"/>
                                         <outlet property="projectLogo" destination="Smu-iS-aU4" id="xCw-Dw-XeY"/>
                                         <outlet property="startBadge" destination="cbN-Lp-BTN" id="ktZ-Ss-HbN"/>
+                                        <outlet property="taskListsLabel" destination="j53-Fw-jNn" id="DjN-04-UW2"/>
                                     </connections>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="TaskListCell" rowHeight="60" id="5nf-6B-VYx" customClass="TaskListCell" customModule="TeamworkSample" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="TaskListCell" rowHeight="60" id="5nf-6B-VYx" customClass="TaskListCell" customModule="TeamworkSample" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="281" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5nf-6B-VYx" id="jsE-3K-6o2">
@@ -315,17 +411,27 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please, select a project." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dPd-1x-fyD">
+                                <rect key="frame" x="96.5" y="323" width="182" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="cmd-GR-mH9" firstAttribute="leading" secondItem="Qdc-Bb-agn" secondAttribute="leading" id="6kM-gn-BYT"/>
                             <constraint firstItem="Qdc-Bb-agn" firstAttribute="bottom" secondItem="cmd-GR-mH9" secondAttribute="bottom" id="FAs-w5-vdK"/>
                             <constraint firstItem="Qdc-Bb-agn" firstAttribute="trailing" secondItem="cmd-GR-mH9" secondAttribute="trailing" id="P7r-xe-dnI"/>
+                            <constraint firstItem="dPd-1x-fyD" firstAttribute="centerX" secondItem="ibp-9T-1l6" secondAttribute="centerX" id="Tqf-jP-cqx"/>
+                            <constraint firstItem="dPd-1x-fyD" firstAttribute="centerY" secondItem="ibp-9T-1l6" secondAttribute="centerY" id="dt4-Ah-9r8"/>
                             <constraint firstItem="cmd-GR-mH9" firstAttribute="top" secondItem="Qdc-Bb-agn" secondAttribute="top" id="fqz-XB-goU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Qdc-Bb-agn"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Owg-7I-kcU"/>
                     <connections>
+                        <outlet property="noProjectLabel" destination="dPd-1x-fyD" id="LV4-5M-Clg"/>
                         <outlet property="projectOverview" destination="rsw-Ay-DL9" id="Lvr-En-QSF"/>
                         <outlet property="table" destination="cmd-GR-mH9" id="Z0N-zJ-bnk"/>
                         <outlet property="viewModel" destination="um6-tp-u5v" id="cr9-F2-ggE"/>
@@ -340,7 +446,7 @@
                     </connections>
                 </customObject>
             </objects>
-            <point key="canvasLocation" x="636" y="-157.87106446776613"/>
+            <point key="canvasLocation" x="-287" y="657"/>
         </scene>
         <!--Tasks View Controller-->
         <scene sceneID="c2F-Cl-6K7">
@@ -354,7 +460,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TaskCell" rowHeight="100" id="P2O-E5-hsi" customClass="TaskCell" customModule="TeamworkSample" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TaskCell" rowHeight="100" id="P2O-E5-hsi" customClass="TaskCell" customModule="TeamworkSample" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="P2O-E5-hsi" id="J6o-Fz-Hpr">
@@ -446,7 +552,10 @@
                     </connections>
                 </customObject>
             </objects>
-            <point key="canvasLocation" x="638" y="657"/>
+            <point key="canvasLocation" x="558" y="657"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="BZ8-vD-mxB"/>
+    </inferredMetricsTieBreakers>
 </document>

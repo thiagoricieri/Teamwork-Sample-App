@@ -15,6 +15,7 @@ enum Router: URLRequestConvertible {
     static let config: RouterConfig = ProductionRouterConfig()
     
     // MARK: - API Endpoints
+    case account()
     case projects()
     case lists(projectId: String)
     case tasks(listId: String)
@@ -23,6 +24,8 @@ enum Router: URLRequestConvertible {
         
         var result: (path: String, method: String, parameters: Dict?) {
             switch self {
+                case .account():
+                    return ("/account.json", "GET", nil)
                 case .projects():
                     return ("/projects.json", "GET", nil)
                 case .lists(let projectId):

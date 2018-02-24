@@ -13,7 +13,7 @@ class ProjectsViewModel: BaseViewModel {
     
     @IBOutlet var api: ProjectsApi!
     
-    var projects = [OneProjectViewModel]()
+    fileprivate var projects = [OneProjectViewModel]()
     
     var projectsCount: Int {
         get { return projects.count }
