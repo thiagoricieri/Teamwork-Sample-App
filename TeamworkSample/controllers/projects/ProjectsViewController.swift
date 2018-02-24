@@ -9,16 +9,20 @@
 import Foundation
 import UIKit
 
-class ProjectsViewController: BaseTableViewController {
+class ProjectsViewController: BaseTableViewController,
+        UISplitViewControllerDelegate{
     
     @IBOutlet var viewModel: ProjectsViewModel!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.title = "Projects.Title".localized
-        self.table.estimatedRowHeight = ProjectCell.height
-        self.enableRefreshControl()
+    fileprivate func setupTableAndSplitView() {
+        table.estimatedRowHeight = ProjectCell.height
+        enableRefreshControl()
         
+        splitViewController?.preferredDisplayMode = .allVisible
+        splitViewController?.delegate = self
+    }
+    
+    fileprivate func setupViewModel() {
         viewModel.defaultNetworkError = { [weak self] in
             self?.errorAlert(message: "Projects.Error.Loading".localized)
         }
@@ -32,6 +36,14 @@ class ProjectsViewController: BaseTableViewController {
         }
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.title = "Projects.Title".localized
+        
+        setupTableAndSplitView()
+        setupViewModel()
+    }
+    
     // MARK: - Refresh Control
     override func refreshData() {
         
@@ -40,6 +52,13 @@ class ProjectsViewController: BaseTableViewController {
             self?.table.reloadData()
             self?.endRefreshAnimation()
         }
+    }
+    
+    // MARK: - Split View
+    func splitViewController(_ splitViewController: UISplitViewController,
+                             collapseSecondary secondaryViewController: UIViewController,
+                             onto primaryViewController: UIViewController) -> Bool {
+        return true
     }
     
     // MARK: - Table View
@@ -67,7 +86,8 @@ class ProjectsViewController: BaseTableViewController {
     // MARK: - Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == MainStoryboard.Segue.toTaskLists {
-            let dest = segue.destination as! TaskListsViewController
+            let nc = segue.destination as! UINavigationController
+            let dest = nc.viewControllers.first as! TaskListsViewController
             dest.project = sender as! OneProjectViewModel
         }
     }
